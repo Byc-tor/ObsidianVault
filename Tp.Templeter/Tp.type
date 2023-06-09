@@ -1,0 +1,30 @@
+---
+
+<%*
+   let tema=""; let tipo = ""; let subtema="";let subsubtema="";
+	tipo = await tp.system.suggester(["Calculo","Geometria","Codes"],["Calculo","Geometria","Codes"])
+
+   if (tipo==="Calculo"){
+      tema = await tp.system.suggester(["Unidad1","Series","Integrales","Teorema"],["Unidad1","Series","Integrales","Teorema"]);
+      subtema = await tp.system.prompt("Titulo(Subtema)...");
+   }else{
+      tema="";subtema="";
+      if(tipo==="Geometria"){
+         tema = await tp.system.suggester([,"Vectores","Planos","ConicasR2","ConicasR3"],[,"Vectores","Planos","ConicasR2","ConicasR3"])
+         subtema = await tp.system.prompt("Titulo(Subtema)...");
+      }else{
+         tema="";subtema="";
+      }
+   }
+
+   tp.file.move(tipo+"/"+tema+"/"+subtema+".md");
+
+   tR+=""
+%>
+title: <%* tR += subtema %>
+tema: <%* tR += tema %>
+type: <%* tR += tipo %>
+tags:
+- <%* tR += tipo%>/<%* tR += tema%>
+- <%* tR +=tema%>/<%* tR+= subtema%>
+---
