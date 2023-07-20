@@ -1,5 +1,4 @@
 ---
-
 <%*
    let tema=""; let tipo = ""; let subtema="";let subsubtema="";
 	tipo = await tp.system.suggester(["Calculo","Geometria","Codes"],["Calculo","Geometria","Codes"])
@@ -27,4 +26,7 @@ type: <%* tR += tipo %>
 tags:
 - <%* tR += tipo%>/<%* tR += tema%>
 - <%* tR +=tema%>/<%* tR+= subtema%>
+
 ---
+
+# <% tR += tema >_<% tR += subtema>
