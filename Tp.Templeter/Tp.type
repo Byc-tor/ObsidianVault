@@ -25,7 +25,7 @@ tema: <%* tR += tema %>
 type: <%* tR += tipo %>
 tags:
 - <%* tR += tipo%>/<%* tR += tema%>
-- <%* tR +=tema%>/<%* tR+= subtema%>
+- <%* tR +=tema%>/<%* tR+= subtema%> 
 
 ---
 
